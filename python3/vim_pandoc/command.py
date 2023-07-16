@@ -165,9 +165,9 @@ class PandocCommand(object):
                     vim.command(wnr + "wincmd c")
                     vim.command(wnr + "put='Running pandoc...\n'")
 
-                vim.command("botright 7new pandoc-execute")
+                vim.command("botright 0new pandoc-execute")
                 vim.command("setlocal buftype=nofile")
-                vim.command("setlocal bufhidden=hidden")
+                vim.command("setlocal bufhidden=wipe")
                 vim.command("setlocal nobuflisted")
                 vim.command("map <buffer> q <Esc>:close<Enter>")
                 vim.command("call termopen(" + \
