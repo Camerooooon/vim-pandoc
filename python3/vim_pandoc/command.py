@@ -170,12 +170,12 @@ class PandocCommand(object):
                 vim.command("setlocal bufhidden=wipe")
                 vim.command("setlocal nobuflisted")
                 vim.command("map <buffer> q <Esc>:close<Enter>")
-                vim.command("call termopen(" + \
-                            "['"+ "','".join(shlex.split(self._run_command)) + "'], " + \
-                            " extend({'should_open': '" + should_open_s + "'}," +\
-                            " {'on_exit': 'pandoc#command#JobHandler'," + \
-                            "'on_stdout': 'pandoc#command#JobHandler'," + \
-                            "'on_stderr': 'pandoc#command#JobHandler'}))")
+                #vim.command("call termopen(" + \
+                #            "['"+ "','".join(shlex.split(self._run_command)) + "'], " + \
+                #            " extend({'should_open': '" + should_open_s + "'}," +\
+                #            " {'on_exit': 'pandoc#command#JobHandler'," + \
+                #            "'on_stdout': 'pandoc#command#JobHandler'," + \
+                #            "'on_stderr': 'pandoc#command#JobHandler'}))")
                 vim.command("file pandoc-execute")
                 vim.command("normal G")
                 vim.command("wincmd p")
