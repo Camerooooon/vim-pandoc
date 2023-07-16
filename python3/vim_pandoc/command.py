@@ -160,14 +160,14 @@ class PandocCommand(object):
                 except:
                     should_open_s = '0'
 
-                # if int(vim.eval("bufloaded('pandoc-execute')")):
-                #     wnr = vim.eval("bufwinnr('pandoc-execute')")
-                #     vim.command(wnr + "wincmd c")
-                #     vim.command(wnr + "put='Running pandoc...\n'")
+                if int(vim.eval("bufloaded('pandoc-execute')")):
+                    wnr = vim.eval("bufwinnr('pandoc-execute')")
+                    vim.command(wnr + "wincmd c")
+                    vim.command(wnr + "put='Running pandoc...\n'")
 
-                # vim.command("botright 7new pandoc-execute")
+                vim.command("botright 7new pandoc-execute")
                 vim.command("setlocal buftype=nofile")
-                vim.command("setlocal bufhidden=wipe")
+                vim.command("setlocal bufhidden=hidden")
                 vim.command("setlocal nobuflisted")
                 vim.command("map <buffer> q <Esc>:close<Enter>")
                 vim.command("call termopen(" + \
@@ -176,7 +176,7 @@ class PandocCommand(object):
                             " {'on_exit': 'pandoc#command#JobHandler'," + \
                             "'on_stdout': 'pandoc#command#JobHandler'," + \
                             "'on_stderr': 'pandoc#command#JobHandler'}))")
-                # vim.command("file pandoc-execute")
+                vim.command("file pandoc-execute")
                 vim.command("normal G")
                 vim.command("wincmd p")
 
