@@ -166,7 +166,6 @@ class PandocCommand(object):
                     vim.command(wnr + "put='Running pandoc...\n'")
 
                 vim.command("botright 7new pandoc-execute")
-                vim.command("hide")
                 vim.command("setlocal buftype=nofile")
                 vim.command("setlocal bufhidden=wipe")
                 vim.command("setlocal nobuflisted")
@@ -180,6 +179,7 @@ class PandocCommand(object):
                 vim.command("file pandoc-execute")
                 vim.command("normal G")
                 vim.command("wincmd p")
+                vim.command("hide")
 
             # for vim versions with clientserver support
             elif vim.eval("has('clientserver')") == '1' and \
