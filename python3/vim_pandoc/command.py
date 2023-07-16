@@ -179,7 +179,6 @@ class PandocCommand(object):
                 vim.command("file pandoc-execute")
                 vim.command("normal G")
                 vim.command("wincmd p")
-                vim.command("hide pandoc-execute")
 
             # for vim versions with clientserver support
             elif vim.eval("has('clientserver')") == '1' and \
